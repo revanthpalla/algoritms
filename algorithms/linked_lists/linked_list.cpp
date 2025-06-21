@@ -40,6 +40,7 @@ public:
     void deleteByValue(int d);
     void reverse_list();
     void display();
+    void removeNthNodeFromEnd(int pos);
     // common algo's making it as friends
     friend linked_list* merge(linked_list*, linked_list*);
 };
@@ -143,15 +144,41 @@ linked_list* merge(linked_list* l1, linked_list* l2) {
     return merged;
 }
 
+void linked_list::removeNthNodeFromEnd(int pos) {
+    node* slow = head;
+    node* fast = head;
+    for (int i = 1;i < pos;i++) {
+        fast = fast->next;
+        if (fast == nullptr) {
+            cout << "linked list length is less than position" << endl;
+            return;
+        }
+    }
+    static bool one_cycle_less = 1;
+    while (fast->next != nullptr) {
+        fast = fast->next;
+        if (one_cycle_less) {
+            one_cycle_less = 0;
+            continue;
+        }
+        slow = slow->next;
+    }
+    node* x = slow->next;
+    slow->next = x->next;
+    x->next = nullptr;
+    delete x;
+}
+
 int main() {
-    linked_list l1 = linked_list(5);
-    linked_list l2 = linked_list(1);
-    l1.push_back(6);
-    l2.push_back(2);
-    l2.push_back(3);
-    l1.display();
-    l2.display();
-    linked_list* l3 = merge(&l1, &l2);
-    l3->display();
+    linked_list l = linked_list(7);
+    l.push_back(5);
+    l.push_back(6);
+    l.push_back(12);
+    l.push_back(3);
+    l.push_back(9);
+    l.push_back(11);
+    l.display();
+    l.removeNthNodeFromEnd(2);
+    l.display();
     return 0;
 }
