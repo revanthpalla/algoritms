@@ -1,0 +1,1 @@
+/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/static_lib_example.dir/src/main.cpp.o -o static_lib_example  /Users/revanthpalla/code/CMake_libraries/static_lib_example/libs/external_libs/liblogger.a
