@@ -1,0 +1,6 @@
+/Users/revanthpalla/code/shared_lib/third_party_lib/install/lib/liblogger.dylib
+/Users/revanthpalla/code/shared_lib/third_party_lib/install/include/include/logger.h
+/Users/revanthpalla/code/shared_lib/third_party_lib/install/lib/cmake/loggerlib/logger_targets.cmake
+/Users/revanthpalla/code/shared_lib/third_party_lib/install/lib/cmake/loggerlib/logger_targets-noconfig.cmake
+/Users/revanthpalla/code/shared_lib/third_party_lib/install/lib/cmake/loggerlib/loggerConfig.cmake
+/Users/revanthpalla/code/shared_lib/third_party_lib/install/lib/cmake/loggerlib/loggerConfigVersion.cmake
