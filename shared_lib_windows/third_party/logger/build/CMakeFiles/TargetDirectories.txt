@@ -1,0 +1,7 @@
+C:/code/shared_lib/third_party/logger/build/CMakeFiles/logger.dir
+C:/code/shared_lib/third_party/logger/build/CMakeFiles/edit_cache.dir
+C:/code/shared_lib/third_party/logger/build/CMakeFiles/rebuild_cache.dir
+C:/code/shared_lib/third_party/logger/build/CMakeFiles/list_install_components.dir
+C:/code/shared_lib/third_party/logger/build/CMakeFiles/install.dir
+C:/code/shared_lib/third_party/logger/build/CMakeFiles/install/local.dir
+C:/code/shared_lib/third_party/logger/build/CMakeFiles/install/strip.dir

@@ -1,0 +1,3 @@
+C:/code/shared_lib/third_party/logger/lib/lib/liblogger.dll.a
+C:/code/shared_lib/third_party/logger/lib/bin/liblogger.dll
+C:/code/shared_lib/third_party/logger/lib/include/logger/logger.h

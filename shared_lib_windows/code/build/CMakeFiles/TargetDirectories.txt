@@ -1,0 +1,3 @@
+C:/code/shared_lib/code/build/CMakeFiles/app.dir
+C:/code/shared_lib/code/build/CMakeFiles/edit_cache.dir
+C:/code/shared_lib/code/build/CMakeFiles/rebuild_cache.dir
