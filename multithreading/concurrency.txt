@@ -1,0 +1,36 @@
+concurrency means executing multiple tasks at the same time but not necessarily simultaneously.
+
+Appendix:
+https://medium.com/@itIsMadhavan/concurrency-vs-parallelism-a-brief-review-b337c8dac350
+
+Race condition is a situation where two or more threads happen to change common data at a same time 
+when there is race condition we need to protect common data that protected section is called critical section
+
+Mutex(std::mutex) is mutual exclusion, it avoids race condition
+
+try_lock():
+Tries to lock the mutex. Returns immediately. On successful lock returns true else false
+
+try_lock() vs lock():
+suppose 2 threads(assume T1, T2) see the condition of lock. T1 is lucky to get lock 
+T2 see the condition as per lock() T2 waits till T1 clears lock
+T2 see the condition as per lock() T2 will execute further statements after lock.
+
+std::try_lock() is different from mutex:: try_lock()
+std::try_lock() -- tries to lock all locakable objects passed in it one by one in a given order
+
+On success it will return -1, otherwise it will return 0 based index of mutex number which it couldnt lock
+if it fails to lock any mutex it will release lock of all mutexes it locked before
+
+
+Appendix:
+https://hksoni.medium.com/multithreading-in-c-part-1-c459b7150b3b - part-1
+https://hksoni.medium.com/multithreading-in-c-part-2-c342bb2896e0 - part-2
+https://hksoni.medium.com/multithreading-in-c-part-3-e858872625a6 - part-3
+https://hksoni.medium.com/multithreading-in-c-part-4-e24af312e0be - part-4
+https://hksoni.medium.com/multithreading-in-c-part-5-70065a30e5e7 - part-5
+https://hksoni.medium.com/c-multithreading-interview-prep-3c26baa764e5 - Interview questions
+
+About singleton design pattern - https://hksoni.medium.com/singleton-in-c-wrong-and-right-way-ebee4b2b2d48
+https://medium.com/@lokeshbihani99/singleton-pattern-in-c-8bbf1e53c023
+https://medium.com/@kamresh485/singleton-pattern-in-c-71c4bf61a3df
