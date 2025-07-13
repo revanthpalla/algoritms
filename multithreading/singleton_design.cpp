@@ -15,15 +15,17 @@ private:
     DBConnection(DBConnection&&) = delete;
     DBConnection& operator=(DBConnection&&) = delete;
     /* Private static instance */
-    static DBConnection* instance;
-    static mutex mtx;
+    static std::shared_ptr<DBConnection> instance;
+    static std::mutex mtx;
 public:
-    static DBConnection* getInstance() {
+    static shared_ptr<DBConnection> getInstance() {
         std::lock_guard<std::mutex> lg(mtx);
-        if (instance == nullptr) {
-            instance = new DBConnection();
+        if (DBConnection::instance == nullptr) {
+            std::shared_ptr<DBConnection> instance1(new DBConnection());
+            //DBConnection::instance = std::make_shared<DBConnection>();
+            instance1.swap(instance);
         }
-        return instance;
+        return DBConnection::instance;
     }
     void connect() {
         cout << "instance id: " << instance << " got connected" << endl;
@@ -31,11 +33,11 @@ public:
 };
 // Initialize static members outside the class definition
 std::mutex DBConnection::mtx;
-DBConnection* DBConnection::instance = nullptr;
+std::shared_ptr<DBConnection> DBConnection::instance = nullptr;
 
 int main() {
-    DBConnection* db1 = DBConnection::getInstance();
-    DBConnection* db2 = DBConnection::getInstance();
+    std::shared_ptr<DBConnection> db1 = DBConnection::getInstance();
+    std::shared_ptr<DBConnection> db2 = DBConnection::getInstance();
     db1->connect();
     db2->connect();
     return 0;
