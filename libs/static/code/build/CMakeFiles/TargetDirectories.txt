@@ -1,0 +1,3 @@
+/Users/revanthpalla/code/libs/static/code/build/CMakeFiles/APP.dir
+/Users/revanthpalla/code/libs/static/code/build/CMakeFiles/edit_cache.dir
+/Users/revanthpalla/code/libs/static/code/build/CMakeFiles/rebuild_cache.dir
